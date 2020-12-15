@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat news</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/threatnews.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/7c561158e6.js" crossorigin="anonymous"></script>
+</head>
+
+
+<div class="navbar navbar-light bg-light p-3">
+    <div class="container-fluid">
+        <div class="row">
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4 outer">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Threat News</li>
+                    </ol>
+                </nav>
+                <h2>Threat News</h2>
+            </main>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row my-4 outer">
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 inner">
+                <div class="card">
+                    <h5 class="card-header">Visualization of Malware</h5>
+                    <div class="card-body">
+                        <canvas id="threat_news_chart" width="300" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3 inner">
+                <div class="card">
+                    <h5 class="card-header">Subscribed Pulses</h5>
+                    <div id="loading">
+                        <p><img src="./img/loading2.gif" /></p>
+                    </div>
+                    <div class="card-body" id="mostraNomi">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body" id="mb">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

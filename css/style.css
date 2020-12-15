@@ -1,0 +1,66 @@
+.outer {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* Safari and Chrome */
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+
+.inner {
+    width: 50%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#left {
+    float: left;
+    width: 100px;
+}
+
+#right {
+    float: right;
+    width: 100px;
+}
+
+#pulsename {
+    position: relative;
+    display: flex;
+    float: left;
+    width: 100%;
+    padding: 15px 15px 10px;
+    overflow: hidden;
+}
+
+.sorgente div:nth-child(odd) {
+    background-color: #001aff63;
+}
+
+.col-md-3 {
+    background: #fff;
+}
+
+.col-md-3:nth-child(2n) {
+    background: rgba(204, 204, 204, 0.514);
+}
+
+#loading {
+    text-align: center;
+}
+
+#active-bar {
+    height: 200px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    float: left;
+    z-index: 5;
+    display: none;
+}
+
+#pulsename:hover>#active-bar {
+    display: block;
+}
