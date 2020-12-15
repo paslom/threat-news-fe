@@ -105,6 +105,10 @@ function HTMLModal() {
 }
 
 
+
+
+
+
 // Our labels along the x-axis
 $(document).ready(function() {
     console.log("s3r_chart");
