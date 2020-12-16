@@ -98,6 +98,8 @@ function htmlNames() {
 
 }
 
+
+
 function HTMLModal() {
     $("#exampleModalLabel").append("<p>" + contentJSON.replace(/['"]+/g, '') + "</p>");
     $("#mb").append("<p>" + descriptionJSON.replace(/['"]+/g, '') + "</p>");
