@@ -17,9 +17,11 @@ function loadPulses() {
 
         },
         success: function(data) {
+            
             $(document).ready(function() {
                 $("[id='pulsename']").click(function() {
-                    alert($(this).attr("titlemodal"));
+                    $("#titleId").html($(this).attr("titleModal"));
+                    $("#descriptionId").html($(this).attr("descriptionModal"));
                 });
             });
             HTMLpulse(data);
@@ -50,7 +52,6 @@ function pulseDetail(pulseId) {
 
         },
         success: function(data) {
-
             HTMLpulse(data);
             $(document).ajaxComplete(function() {
                 $("#loading").css("display", "none");
@@ -67,8 +68,7 @@ function pulseDetail(pulseId) {
 }
 
 
-function HTMLpulse(data) {
-
+function HTMLpulse(data) {  
     $.each(data, function(key, firstValue) {
         if (key == "results") {
             var contenutoJSON = JSON.stringify(firstValue);
@@ -83,31 +83,32 @@ function HTMLpulse(data) {
 
         }
     })
-    HTMLModal();
+    htmlModal();
 }
 
 function htmlNames() {
     $("#mostraNomi")
-        .append("<div class='col-md-3'; id ='pulsename';titlemodal='ciaociao';>" + "<div id = 'active-bar'> <i class ='fas fa-atom';style='text-align:center'></i></div>" +
+        .append(
+            "<div class='col-md-3' id ='pulsename' descriptionModal='"+descriptionJSON.replace(/['"]+/g, '')+
+            "'titleModal='"+contentJSON.replace(/['"]+/g, '')+"'style='cursor:pointer' data-toggle='modal' data-target='#exampleModal'>" + 
+            "<div id = 'active-bar' style='padding-top:auto important!;padding-bottom:auto important!'> <i class ='fas fa-atom'></i></div>" +
             "<div style='float:left'>" + "<img src='./img/avatar.png'></div>" +
             "<div style='float:right;margin:10px;'>" +
-            "<a href  data-toggle='modal' data-target='#exampleModal'> " +
+            "<div  > " +
             contentJSON.replace(/['"]+/g, '') +
-            "</a>" +
+            "</div>" +
             "</div></div>");
-
 }
 
-function HTMLModal() {
-    $("#exampleModalLabel").append("<p>" + contentJSON.replace(/['"]+/g, '') + "</p>");
-    $("#mb").append("<p>" + descriptionJSON.replace(/['"]+/g, '') + "</p>");
+function htmlModal() {
+    $("#exampleModalLabel").append("<p id='titleId' style='text-align:center'>" + contentJSON.replace(/['"]+/g, '') + "</p>");
+    $("#mb").append("<p id='descriptionId' style='text-align:justify'>" + descriptionJSON.replace(/['"]+/g, '') + "</p>");
 
 }
 
 
 // Our labels along the x-axis
 $(document).ready(function() {
-    console.log("s3r_chart");
     var data = {
             labels: ['Trojan',
                 'Backdoor',
@@ -147,5 +148,4 @@ $(document).ready(function() {
 
 
     });
-
 });
