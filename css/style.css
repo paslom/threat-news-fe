@@ -37,11 +37,12 @@
 }
 
 .col-md-3 {
-    background: #fff;
+    background: #5bd9ff69;
+    margin-bottom: 5px;
 }
 
 .col-md-3:nth-child(2n) {
-    background: rgba(204, 204, 204, 0.514);
+    background: rgba(134, 249, 75, 0.51);
 }
 
 #loading {
@@ -52,8 +53,7 @@
     height: 200px;
     width: 30px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 40%;
     bottom: 0;
     right: 0;
     float: left;
